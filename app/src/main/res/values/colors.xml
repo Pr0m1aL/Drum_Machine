@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#21222C</color>
+    <color name="colorPrimaryDark">#21222C</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <!--blue gradient
+    <color name = "bluestartcolor">#47F9FE</color>-->
+    <color name = "bluestartcolor">#2e86de</color>
+    <color name = "bluebuttonstartcolor">#54a0ff</color>
+    <color name = "blueendcolor">#2e86de</color>
+
+
+    <!--orange gradient
+    <color name = "orangestartcolor">#FEED64</color>-->
+    <color name = "orangestartcolor">#ff9f43</color>
+    <color name = "orangebuttonstartcolor">#feca57</color>
+    <color name = "orangeendcolor">#ff9f43</color>
+
+    <!--pink gradient
+    <color name = "pinkstartcolor">#FD75A5</color>-->
+    <color name = "pinkstartcolor">#f368e0</color>
+    <color name = "pinkbuttonstartcolor">#ff9ff3</color>
+    <color name = "pinkendcolor">#f368e0</color>
+
+    <!--purple gradient
+    <color name = "purplestartcolor">#F75FE1</color>-->
+    <color name = "purplestartcolor">#ee5253</color>
+    <color name = "purplebuttonstartcolor">#ff6b6b</color>
+    <color name = "purpleendcolor">#ee5253</color>
+
+    <!--green gradient
+    <color name = "greenstartcolor">#B4FA51</color>-->
+    <color name = "greenstartcolor">#10ac84</color>
+    <color name = "greenbuttonstartcolor">#1dd1a1</color>
+    <color name = "greenendcolor">#10ac84</color>
+
+    <!--grey gradient
+    <color name = "greystartcolor">#47F9FE</color>-->
+    <color name = "greystartcolor">#ced6e0</color>
+    <color name = "greybuttonstartcolor">#dfe4ea</color>
+    <color name = "greyendcolor">#ced6e0</color>
+
+    <!--grey gradient
+    <color name = "greystartcolor">#47F9FE</color>-->
+    <color name = "yellowstartcolor">#f9ca24</color>
+    <color name = "yellowbuttonstartcolor">#f6e58d</color>
+    <color name = "yellowendcolor">#f9ca24</color>
+
+    <!--grey gradient
+    <color name = "greystartcolor">#47F9FE</color>-->
+    <color name = "aquastartcolor">#01a3a4</color>
+    <color name = "aquabuttonstartcolor">#00d2d3</color>
+    <color name = "aquaendcolor">#01a3a4</color>
+
+    <!--grey gradient
+    <color name = "greystartcolor">#47F9FE</color>-->
+    <color name = "beigestartcolor">#D8C08F</color>
+    <color name = "beigebuttonstartcolor">#FBE8C0</color>
+    <color name = "beigeendcolor">#D8C08F</color>
+
+
+</resources>
