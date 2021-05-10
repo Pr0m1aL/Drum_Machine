@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Drum Pad</string>
+    <string name="app_name">Drum Machine</string>
     <string name="title_activity_main2">MainActivity</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
@@ -13,6 +13,10 @@
     <string name="two">2</string>
     <string name="three">3</string>
     <string name="plus">+</string>
+    <string name="files">Files</string>
+    <string name="record">Rec</string>
+    <string name="play">Play</string>
+    <string name="stop">Stop</string>
     <string name="title_activity_main3">MainActivity</string>
     <string name="title_activity_main4">MainActivity</string>
 </resources>

@@ -43,6 +43,12 @@
 
     <!--grey gradient
     <color name = "greystartcolor">#47F9FE</color>-->
+    <color name = "whitestartcolor">#FFFFFF</color>
+    <color name = "whitebuttonstartcolor">#FFFFFF</color>
+    <color name = "whiteendcolor">#FFFFFF</color>
+
+    <!--grey gradient
+    <color name = "greystartcolor">#47F9FE</color>-->
     <color name = "yellowstartcolor">#f9ca24</color>
     <color name = "yellowbuttonstartcolor">#f6e58d</color>
     <color name = "yellowendcolor">#f9ca24</color>

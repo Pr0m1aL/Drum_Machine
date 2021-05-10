@@ -44,14 +44,13 @@ public class MainActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         fileName = Environment.getExternalStorageDirectory() + "/record.3gpp";
 
-        sp = new SoundPool(9, AudioManager.STREAM_MUSIC, 0);
+        sp = new SoundPool(3, AudioManager.STREAM_MUSIC, 0);
         sound1 = sp.load(getApplicationContext(), R.raw.melody1, 1);
         sound2 = sp.load(getApplicationContext(), R.raw.melody2, 1);
         sound3 = sp.load(getApplicationContext(), R.raw.melody3, 1);
@@ -99,7 +98,6 @@ public class MainActivity extends AppCompatActivity {
         sp.play(sound9, 1.0f, 1.0f, 0, 0, 1f);
     }
 
-
     public void recordStart(View v) {
         try {
             releaseRecorder();
@@ -124,7 +122,11 @@ public class MainActivity extends AppCompatActivity {
 
     public void recordStop(View v) {
         if (mediaRecorder != null) {
-            mediaRecorder.stop();
+            try {
+                mediaRecorder.stop();
+            } catch(RuntimeException stopException) {
+            }
+            mediaRecorder = null;
         }
     }
 

@@ -2,10 +2,15 @@ package com.example.drumpad;
 
 import android.content.Intent;
 import android.media.AudioManager;
+import android.media.MediaPlayer;
+import android.media.MediaRecorder;
 import android.media.SoundPool;
+import android.os.Environment;
 import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
+
+import java.io.File;
 
 public class MainActivity2 extends AppCompatActivity {
 
@@ -19,6 +24,10 @@ public class MainActivity2 extends AppCompatActivity {
     private int sound7;
     private int sound8;
     private int sound9;
+
+    private MediaRecorder mediaRecorder;
+    private MediaPlayer mediaPlayer;
+    private String fileName;
 
     public void onClick1(View view) {
         Intent intent = new Intent(MainActivity2.this, MainActivity.class);
@@ -39,7 +48,9 @@ public class MainActivity2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-        sp = new SoundPool(9, AudioManager.STREAM_MUSIC, 0);
+        fileName = Environment.getExternalStorageDirectory() + "/record.3gpp";
+
+        sp = new SoundPool(3, AudioManager.STREAM_MUSIC, 0);
         sound1 = sp.load(getApplicationContext(), R.raw.melody11, 1);
         sound2 = sp.load(getApplicationContext(), R.raw.melody22, 1);
         sound3 = sp.load(getApplicationContext(), R.raw.melody33, 1);
@@ -84,4 +95,79 @@ public class MainActivity2 extends AppCompatActivity {
     public void playsound9(View v) {
         sp.play(sound9, 1.0f, 1.0f, 0, 0, 1f);
     }
+
+
+
+    public void recordStart(View v) {
+        try {
+            releaseRecorder();
+
+            File outFile = new File(fileName);
+            if (outFile.exists()) {
+                outFile.delete();
+            }
+
+            mediaRecorder = new MediaRecorder();
+            mediaRecorder.setAudioSource(MediaRecorder.AudioSource.MIC);
+            mediaRecorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
+            mediaRecorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
+            mediaRecorder.setOutputFile(fileName);
+            mediaRecorder.prepare();
+            mediaRecorder.start();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public void recordStop(View v) {
+        if (mediaRecorder != null) {
+            try {
+                mediaRecorder.stop();
+            } catch(RuntimeException stopException) {
+            }
+            mediaRecorder = null;
+        }
+    }
+
+    public void playStart(View v) {
+        try {
+            releasePlayer();
+            mediaPlayer = new MediaPlayer();
+            mediaPlayer.setVolume(10000.0f, 10000.0f);
+            mediaPlayer.setDataSource(fileName);
+            mediaPlayer.prepare();
+            mediaPlayer.start();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void playStop(View v) {
+        if (mediaPlayer != null) {
+            mediaPlayer.stop();
+        }
+    }
+
+    private void releaseRecorder() {
+        if (mediaRecorder != null) {
+            mediaRecorder.release();
+            mediaRecorder = null;
+        }
+    }
+
+    private void releasePlayer() {
+        if (mediaPlayer != null) {
+            mediaPlayer.release();
+            mediaPlayer = null;
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        releasePlayer();
+        releaseRecorder();
+    }
+
 }
