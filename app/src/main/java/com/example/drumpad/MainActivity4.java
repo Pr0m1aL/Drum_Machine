@@ -74,7 +74,6 @@ public class MainActivity4 extends AppCompatActivity {
         });
 
         sp = new SoundPool(3, AudioManager.STREAM_MUSIC, 0);
-
     }
 
 
